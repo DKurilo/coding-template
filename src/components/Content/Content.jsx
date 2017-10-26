@@ -1,9 +1,10 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import Component from '../common/ShallowCompareComponent';
 import './content.scss';
 
-import Form from '../common/Form/Form';
+//import Form from '../common/Form/Form';
 
 const form = {
   groups: [
@@ -177,7 +178,7 @@ class Content extends Component {
     return (
       <div className="content">
         <ul>{list.map((item, i) => (<li key={i}>{item.title}</li>))}</ul>
-        <Form {...form} />
+        {/* <Form {...form} /> */}
       </div>
     );
   }

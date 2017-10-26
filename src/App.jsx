@@ -1,6 +1,11 @@
 import React from 'react';
 // import Component from './components/common/ShallowCompareComponent';
-import { Router, Route, browserHistory, IndexRedirect } from 'react-router';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom'
 
 import Root from './components/Root';
 import NotFound from './components/common/NotFound';
@@ -10,11 +15,11 @@ import Page from './components/Page';
 import './app.scss';
 
 export default () => (
-  <Router history={browserHistory}>
-    <Route path="/" component={Root}>
-      <IndexRedirect to="page" />
-      <Route path="page" component={Page} />
-      <Route path="*" component={NotFound} />
-    </Route>
+  <Router>
+    <Switch component={Root}>
+      <Route path="/page" component={Page} />
+      <Redirect from="/" to="page" />
+      <Route component={NotFound} />
+    </Switch>
   </Router>
 );

@@ -20,10 +20,10 @@ module.exports = {
       'process.env.NODE_ENV': '"development"',
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
 //  externals: {
 //    google: 'const google',
@@ -31,16 +31,16 @@ module.exports = {
 //  },
   module: {
     loaders: [
-      { test: /\.(png|jpe?g|gif)$/, loader: 'url?limit=5000' },
-      { test: /\.(eot|ttf|svg|woff|woff2)$/, loader: 'file' },
-      { test: /\.css$/, loader: 'style!css' },
+      { test: /\.(png|jpe?g|gif)$/, loader: 'url-loader?limit=5000' },
+      { test: /\.(eot|ttf|svg|woff|woff2)$/, loader: 'file-loader' },
+      { test: /\.css$/, loader: 'style-loader!css' },
       {
         test: /\.s(c|a)ss$/,
-        loaders: ['style', 'css', 'sass'],
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.jsx?$/,
-        loaders: ['babel'],
+        loaders: ['babel-loader'],
         include: path.join(__dirname, 'src'),
       },
     ],

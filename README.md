@@ -7,18 +7,13 @@
 
     npm start
 
-or
-
-    npm run start:windows
 
 Local Dev Server: [localhost:3000](http://localhost:3000)
 
 
 # Compile for Production
 
-`npm run build` — on Unix
-<br />
-`npm run build:windows` — on Windows
+`npm run build`
 
 
 # Do Use Git Flow

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { PropTypes } from 'prop-types';
 import Component from './common/ShallowCompareComponent';
 import { connect } from 'react-redux';
 // @todo Consider https://www.npmjs.com/package/react-loader-advanced
